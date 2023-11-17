@@ -19,6 +19,17 @@ def select_prisoner(prisoners, selected_prisoners):
     selected_prisoners.add(selected_prisoner)
     return selected_prisoner
 
+# 김승호
+def simulate_prisoners_problem(num_prisoners):
+    prisoners = initialize_prisoners(num_prisoners)
+    selected_prisoners = set()
+
+    for _ in range(num_prisoners):
+        selected_prisoner = select_prisoner(prisoners, selected_prisoners)
+
+        if set(prisoners) == selected_prisoners:
+            return True
+    return False
 
 if __name__ == "__main__":
     num_simulations = 1000
